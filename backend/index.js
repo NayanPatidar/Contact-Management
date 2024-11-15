@@ -3,8 +3,11 @@ const db = require("./mongo_client");
 const cors = require("cors");
 const Contact = require("./shema");
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
 
-app.use(cors());
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:3000";
+app.use(cors({ origin: allowedOrigin }));
 app.use(express.json());
 
 // For adding the contacts
