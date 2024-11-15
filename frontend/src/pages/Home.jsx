@@ -15,10 +15,8 @@ const Home = () => {
 
   const FetchData = async () => {
     const data = await FetchTableContent(page, pageSize);
-    console.log(data);
 
     setContacts(data.contacts);
-    console.log(data.totalContacts);
 
     setTotalContacts(data.totalContacts);
   };
